@@ -1,12 +1,14 @@
-import React from 'react';
-import Row from './components/Row';
-import Col from './components/Col';
-import { GridProvider } from './context/GridContext';
-import './App.css'
+import React from "react";
+import Row from "./components/Row";
+import Col from "./components/Col";
+import { GridProvider } from "./context/GridContext";
+import Grid from "./components/Grid";
+import "./App.css";
 
 function App() {
   return (
-    <GridProvider gap={0}>
+    <GridProvider gapRow={0} gapColumn={10}>
+      <Grid>
         <Row>
           <Col size="12" sm={6} md={3}>
             <div className="paper">xs=12</div>
@@ -34,6 +36,7 @@ function App() {
             <div className="paper">xs=3</div>
           </Col>
         </Row>
+      </Grid>
     </GridProvider>
   );
 }
